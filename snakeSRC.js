@@ -12,16 +12,18 @@ var yCor = [];
 
 var xFruit = 0;
 var yFruit = 0;
-var scoreElem;
+//var scoreElem;
+
+var currentScore = 0;
 
 function setup() {
   createCanvas(500, 500);
 
-  scoreElem = createDiv('Score = 0');
-  scoreElem.position(20, 20);
-  scoreElem.id = 'score';
-  scoreElem.style('color', 'white');
-  
+  //scoreElem = createDiv('Score = 0');
+  //scoreElem.position(20, 20);
+  //scoreElem.id = 'score';
+  //scoreElem.style('color', 'black');
+
   frameRate(15);
   stroke(255);
   strokeWeight(10);
@@ -35,6 +37,13 @@ function setup() {
 
 function draw() {
   background(0);
+
+  textSize(32);
+  //text("word", 10, 30);
+
+  textSize(32);
+  text(currentScore, 10, 30);
+
   for (var i = 0; i < numSegments - 1; i++) {
     line(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
   }
@@ -92,8 +101,8 @@ function checkGameStatus() {
       yCor[yCor.length - 1] < 0 ||
       checkSnakeCollision()) {
     noLoop();
-    var scoreVal = parseInt(scoreElem.html().substring(8));
-    scoreElem.html('Game ended! Your score was : ' + scoreVal);
+    //var scoreVal = parseInt(scoreElem.html().substring(8));
+    //scoreElem.html('Game ended! Your score was : ' + currentScore);
   }
 }
 
@@ -119,8 +128,9 @@ function checkSnakeCollision() {
 function checkForFruit() {
   point(xFruit, yFruit);
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
-    var prevScore = parseInt(scoreElem.html().substring(8));
-    scoreElem.html('Score = ' + (prevScore + 1));
+    //var prevScore = parseInt(scoreElem.html().substring(8));
+    currentScore += 1;
+    //scoreElem.html('Score = ' + currentScore);
     xCor.unshift(xCor[0]);
     yCor.unshift(yCor[0]);
     numSegments++;
