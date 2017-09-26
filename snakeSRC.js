@@ -15,12 +15,13 @@ var yFruit = 0;
 var scoreElem;
 
 function setup() {
+  createCanvas(500, 500);
+
   scoreElem = createDiv('Score = 0');
   scoreElem.position(20, 20);
   scoreElem.id = 'score';
   scoreElem.style('color', 'white');
   
-  createCanvas(500, 500);
   frameRate(15);
   stroke(255);
   strokeWeight(10);
