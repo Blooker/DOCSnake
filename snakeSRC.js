@@ -50,7 +50,7 @@ function draw() {
   updateSnakeCoordinates();
   checkGameStatus();
   checkForFruit();
-}\
+}
 
 /*
  The segments are updated based on the direction of the snake.
