@@ -41,7 +41,7 @@ function draw() {
   updateSnakeCoordinates();
   checkGameStatus();
   checkForFruit();
-}
+}\
 
 /*
  The segments are updated based on the direction of the snake.
@@ -141,22 +141,22 @@ function updateFruitCoordinates() {
 
 function keyPressed() {
   switch (keyCode) {
-    case 37:
+    case 65:
       if (direction != 'right') {
         direction = 'left';
       }
       break;
-    case 39:
+    case 68:
       if (direction != 'left') {
         direction = 'right';
       }
       break;
-    case 38:
+    case 87:
       if (direction != 'down') {
         direction = 'up';
       }
       break;
-    case 40:
+    case 83:
       if (direction != 'up') {
         direction = 'down';
       }
